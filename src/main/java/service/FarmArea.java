@@ -50,7 +50,7 @@ public class FarmArea {
                     }
                 } else {
                     if (x < shorterTitle.length()) {
-                        if (j == 1 || j == withFence - 1) {
+                        if (j == 0 || j == withFence - 1) {
                             System.out.print("║");
                         } else {
                             System.out.print(" ");
@@ -60,10 +60,10 @@ public class FarmArea {
                             System.out.print("║");
                         } else {
                             int sides = (withFence - shorterTitle.length()) / 2;
-                            if (j <= sides || j > sides + shorterTitle.length()) {
+                            if (j < sides || j >= sides + shorterTitle.length()) {
                                 System.out.print(" ");
                             } else {
-                                System.out.print(shorterTitle.charAt(j - sides - 1));
+                                System.out.print(shorterTitle.charAt(j - sides));
                             }
                         }
                     } else {
@@ -71,10 +71,10 @@ public class FarmArea {
                             System.out.print("║");
                         } else {
                             int sides = (withFence - longerTile.length()) / 2;
-                            if (j <= sides || j > sides + longerTile.length()) {
+                            if (j < sides || j >= sides + longerTile.length()) {
                                 System.out.print(" ");
                             } else {
-                                System.out.print(longerTile.charAt(j - sides - 1));
+                                System.out.print(longerTile.charAt(j - sides));
                             }
                         }
                     }
